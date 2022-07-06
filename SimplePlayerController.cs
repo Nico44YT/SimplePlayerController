@@ -23,7 +23,7 @@ public class SimplePlayerController : MonoBehaviour
 
     [Header("Camera")]
     [SerializeField] [Range(1f, 10f)] private float lookSpeed = 2.0f;
-    [SerializeField] [Range(1f, 90f)]private float lookXLimit = 75.0f;
+    [SerializeField] [Range(1f, 90f)] private float lookXLimit = 75.0f;
 
     [Header("Settings")]
     [SerializeField] private bool allowJump = true;
