@@ -5,8 +5,8 @@ using UnityEngine;
 using UnityEditor;
 #endif
 
-[RequireComponent(typeof(Camera)), RequireComponent(typeof(CharacterController))]
-public class SimplePlayerController : MonoBehaviour
+[RequireComponent(typeof(CharacterController))]
+public class PlayerMovement : MonoBehaviour
 {   
     
     [SerializeField] CharacterController characterController;
@@ -24,6 +24,7 @@ public class SimplePlayerController : MonoBehaviour
     [Header("Camera")]
     [SerializeField] [Range(1f, 10f)] private float lookSpeed = 2.0f;
     [SerializeField] [Range(1f, 90f)] private float lookXLimit = 75.0f;
+    [SerializeField] [Range(30f, 90f)] private float FOV = 60f;
 
     [Header("Settings")]
     [SerializeField] private bool allowJump = true;
@@ -51,7 +52,9 @@ public class SimplePlayerController : MonoBehaviour
 
     void Update()
     {
-        
+        // Camera
+        playerCamera.fieldOfView = FOV;
+
         // Movement
         Vector3 forward = transform.TransformDirection(Vector3.forward);
         Vector3 right = transform.TransformDirection(Vector3.right);
