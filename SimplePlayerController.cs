@@ -6,7 +6,7 @@ using UnityEditor;
 #endif
 
 [RequireComponent(typeof(CharacterController))]
-public class PlayerMovement : MonoBehaviour
+public class SimplePlayerController : MonoBehaviour
 {   
     
     [SerializeField] CharacterController characterController;
